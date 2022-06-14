@@ -21,17 +21,42 @@ const configQuestions = [
     type: 'input',
     name: 'title',
     message: 'What would you like to name this readme?'
-  }
+  },
+  {
+    type: 'input',
+    name: 'description',
+    message: 'How would you describe the program?'
+  },
+  {
+    type: 'input',
+    name: 'installation',
+    message: 'How is it installed?'
+  },
+  {
+    type: 'input',
+    name: 'usage',
+    message: 'What do you do to use this?'
+  },
+  {
+    type: 'input',
+    name: 'contributing',
+    message: 'Who else contributed?'
+  },
+  {
+    type: 'input',
+    name: 'tests',
+    message: 'What would you like to name this readme?'
+  },
 ];
 
 const defaultConfig:Config = {
   filename: "default.md",
-  title: 'string',
-  description: 'string',
-  installation: 'string',
-  usage: 'string',
-  contributing: 'string',
-  tests: 'string',
+  title: 'Default title',
+  description: 'This is a description a readme can have',
+  installation: 'You can install this by completing some default steps',
+  usage: 'Here is a desciption of using it',
+  contributing: 'you can name any contributers in this section',
+  tests: 'What sort of testing suites did you use?',
 };
 
 export default async function configuration(): Promise<Config> {
