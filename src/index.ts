@@ -1,14 +1,14 @@
-import writeFile from "./util/writeFile";
+import writeFile from './util/writeFile';
 
-const OUTPUT_PATH = "test.txt"
+const OUTPUT_FILE = 'test.txt';
 
-const questions = []
+const questions = [];
 
 /**
  * The initializataion funciton for our generator
  */
-async function init(){
-  await writeFile("this is a test file", OUTPUT_PATH);
+async function init() {
+  await writeFile('this is a test file', OUTPUT_FILE);
 }
 
 init();
