@@ -1,6 +1,7 @@
 import * as iq from 'inquirer';
 
 export type Config = {
+  filename: string;
   title: string;
   description: string;
   installation: string;
@@ -10,7 +11,12 @@ export type Config = {
 };
 
 
-const starterQuestions = [
+const configQuestions = [
+  {
+    type: 'input',
+    name: 'filename',
+    message: 'what would you like to name this file?'
+  },
   {
     type: 'input',
     name: 'title',
@@ -18,26 +24,27 @@ const starterQuestions = [
   }
 ];
 
-const defaultConfig = {
+const defaultConfig:Config = {
+  filename: "default.md",
   title: 'string',
   description: 'string',
   installation: 'string',
   usage: 'string',
   contributing: 'string',
-  tests: 'string'
+  tests: 'string',
 };
 
 export default async function configuration(): Promise<Config> {
-  const answer = await iq.prompt({
+  const {useDefault} = await iq.prompt({
     type: 'confirm',
     name: 'useDefault',
     message: 'Would you like to use the default generated document?'
   });
-  if (answer.useDefault) {
+  if (useDefault) {
     console.log('generated default readme');
     return defaultConfig;
   }
 
-  const configuration: Config = await iq.prompt(starterQuestions);
+  const configuration: Config = await iq.prompt(configQuestions);
   return configuration;
 }
