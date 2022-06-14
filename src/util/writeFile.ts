@@ -23,4 +23,4 @@ async function writeFile(input: string, fileName: string){
   }
 }
 
-export default writeFile
+export default writeFile;

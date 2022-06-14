@@ -1,14 +1,20 @@
-import writeFile from "./util/writeFile";
+import writeFile from './util/writeFile';
+import configuration from './util/inquire';
+import generateMarkdown from './util/generateMarkdown';
+import { Config } from './util/inquire';
 
-const OUTPUT_PATH = "test.txt"
+const OUTPUT_FILE = 'test.txt';
 
-const questions = []
+const questions = [];
 
 /**
  * The initializataion funciton for our generator
  */
-async function init(){
-  await writeFile("this is a test file", OUTPUT_PATH);
+async function init() {
+  const config:Config = await configuration();
+  console.log('got configuration, now pulling from generate readme');
+  const fileString = generateMarkdown(config);
+  await writeFile(fileString, OUTPUT_FILE);
 }
 
 init();
