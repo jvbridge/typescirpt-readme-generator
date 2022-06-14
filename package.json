@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "nodemon"
+    "start:dev": "nodemon",
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && nodebuild/index.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@types/node": "^17.0.42",
     "nodemon": "^2.0.16",
+    "rimraf": "^3.0.2",
     "ts-node": "^10.8.1",
     "typescript": "^4.7.3"
   }
