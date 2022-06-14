@@ -101,5 +101,9 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
-  }
+  },
+  "include": ["src/**/*"] /* iunclude all of the src directory*/,
+  "exclude": [
+    "/ignore"
+  ] /*ignore the helper directory I have where I store resources*/
 }
