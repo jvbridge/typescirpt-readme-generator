@@ -4,7 +4,8 @@
   "description": "this is my readme generator I made, but re-implemented in typescript, I'm doing this as a way to learn!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon"
   },
   "repository": {
     "type": "git",
