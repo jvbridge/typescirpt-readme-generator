@@ -1,15 +1,7 @@
-type Config ={
-  title: string;
-  description:string;
-  installation: string;
-  usage: string;
-  contributing: string;
-  tests: string;
+import { Config } from "./inquire";
+
+function generateMarkdown(config: Config): string {
+  return 'default readme';
 }
 
-
-function generateMarkdown(config: Config): string{
-  return 'default readme'
-}
-
-export default generateMarkdown
+export default generateMarkdown;
