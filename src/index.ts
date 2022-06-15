@@ -5,8 +5,6 @@ import { Config } from './util/inquire';
 
 const OUTPUT_FILE = 'test.txt';
 
-const questions = [];
-
 /**
  * The initializataion funciton for our generator
  */
@@ -16,5 +14,5 @@ async function init() {
   const fileString = generateMarkdown(config);
   await writeFile(fileString, OUTPUT_FILE);
 }
-
+// run it
 init();
