@@ -1,5 +1,8 @@
 import * as iq from 'inquirer';
-import licenses from "./license.json"
+import licenses from './license.json';
+
+// creating the array of choices to choose from from the license array
+const choices = Object.keys(licenses);
 
 export type Config = {
   filename: string;
@@ -49,9 +52,10 @@ const configQuestions = [
     message: 'What did you use to test this readme'
   },
   {
-    type: 'choices',
+    type: 'list',
     name: 'license',
-    message: 'Which license would you like to use for the readme'
+    message: 'Which license would you like to use for the readme',
+    choices
   }
 ];
 
@@ -63,7 +67,7 @@ const defaultConfig: Config = {
   usage: 'Here is a desciption of using it',
   contributing: 'you can name any contributers in this section',
   tests: 'What sort of testing suites did you use?',
-  license: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+  license: 'MIT'
 };
 
 export default async function configuration(): Promise<Config> {
