@@ -16,7 +16,7 @@ async function init() {
 
   // write it
   await writeFile(fileString, config.filename);
-  console.log('Completed writing config to: ');
+  console.log('Completed writing config to: ' + OUTPUT_PATH + config.filename);
 }
 // run it
 init();
