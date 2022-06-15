@@ -1,4 +1,4 @@
-import { Config } from "./inquire";
+import { Config } from './inquire';
 
 function generateMarkdown(config: Config): string {
   return 'default readme';
