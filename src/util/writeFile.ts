@@ -15,6 +15,7 @@ async function writeFile(input: string, fileName: string) {
   extensions.length > 1
     ? (outputFileName = extensions[0] + '.md')
     : (outputFileName = fileName + '.md');
+
   // get the path to write
   const output = OUTPUT_PATH + outputFileName;
 
@@ -23,7 +24,7 @@ async function writeFile(input: string, fileName: string) {
     await fs.writeFile(output, input);
   } catch (err) {
     console.info("output directory doesn't exist, creating it...");
-    // we couldn't write to the file
+    // we couldn't write to the file, make the directory and try again
     await fs.mkdir(OUTPUT_PATH);
     await writeFile(input, fileName);
   }
