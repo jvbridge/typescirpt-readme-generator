@@ -14,7 +14,7 @@ const configQuestions = [
   {
     type: 'input',
     name: 'filename',
-    message: 'what would you like to name this file?'
+    message: 'What would you like to name this file?'
   },
   {
     type: 'input',
@@ -44,7 +44,7 @@ const configQuestions = [
   {
     type: 'input',
     name: 'tests',
-    message: 'What would you like to name this readme?'
+    message: 'What did you use to test this readme'
   }
 ];
 
