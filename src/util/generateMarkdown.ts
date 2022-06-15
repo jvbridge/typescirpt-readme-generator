@@ -4,17 +4,23 @@ function generateMarkdown(config: Config): string {
   const {title, description, installation, usage, contributing, tests} = config;
   
   const ret = (
-`#${title}
+`#Title
+${title}
 
-##${description}
+##Description
+${description}
 
-##${installation}
+##Installation
+${installation}
 
-##${usage}
+##Usage
+${usage}
 
-##${contributing}
+##Contributing
+${contributing}
 
-##${tests}`
+##Tests
+${tests}`
   )
 return ret;
 }
