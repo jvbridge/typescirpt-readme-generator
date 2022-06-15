@@ -8,8 +8,15 @@ export const OUTPUT_PATH = path.join(__dirname, '../output/');
  * @param input the string to write to the file
  */
 async function writeFile(input: string, fileName: string) {
+  // parse the filename given
+  let outputFileName: string;
+
+  const extensions = fileName.split('.');
+  extensions.length > 1
+    ? (outputFileName = extensions[0] + '.md')
+    : (outputFileName = fileName + '.md');
   // get the path to write
-  const output = OUTPUT_PATH + fileName;
+  const output = OUTPUT_PATH + outputFileName;
 
   // try to write the file
   try {
