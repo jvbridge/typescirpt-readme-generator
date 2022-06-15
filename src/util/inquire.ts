@@ -4,6 +4,9 @@ import licenses from './license.json';
 // creating the array of choices to choose from from the license array
 const choices = Object.keys(licenses);
 
+/**
+ * A type made for the configuration object used.
+ */
 export type Config = {
   filename: string;
   title: string;
@@ -15,6 +18,9 @@ export type Config = {
   license: string;
 };
 
+/**
+ * The questions we will pass into inquirer to ask and set up all the config.
+ */
 const configQuestions = [
   {
     type: 'input',
@@ -59,6 +65,9 @@ const configQuestions = [
   }
 ];
 
+/**
+ * Default configuration file, for if the user wants the default config
+ */
 const defaultConfig: Config = {
   filename: 'default.md',
   title: 'Default title',
@@ -70,17 +79,25 @@ const defaultConfig: Config = {
   license: 'MIT'
 };
 
+/**
+ * This will ask the user questions in order to get the right configuration
+ * for generating the new readme.
+ * @returns 
+ */
 export default async function configuration(): Promise<Config> {
+  // ask if theuser wants a default readme
   const { useDefault } = await iq.prompt({
     type: 'confirm',
     name: 'useDefault',
     message: 'Would you like to use the default generated document?'
   });
+
+  // if they say yes, return our default object
   if (useDefault) {
     console.log('generated default readme');
     return defaultConfig;
   }
-
+  // otherwise ask ALL the questions
   const configuration: Config = await iq.prompt(configQuestions);
   return configuration;
 }
